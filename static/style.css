@@ -11,7 +11,7 @@ body {
     text-align: center;
 }
 
-/* Center the form and visuals */
+/* Centering the form and visuals */
 form, .visualization-container {
     max-width: 800px;
     margin: auto;
