@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Visualizations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <h1>Incident Visualizations</h1>
+    <p>Total incidents processed: {{ incident_count }}</p>
+
+    <div class="visualization-container">
+        {% if clustering_plot %}
+        <div class="visualization-card">
+            <h2>Clustering of Incidents by Nature</h2>
+            <div class="tooltip">
+                <img src="/static/{{ clustering_plot }}" alt="Clustering Plot" onclick="openLightbox(this.src)">
+                <span class="tooltiptext">Click to view larger</span>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if bar_graph %}
+        <div class="visualization-card">
+            <h2>Top 10 Incident Types</h2>
+            <div class="tooltip">
+                <img src="/static/{{ bar_graph }}" alt="Bar Graph" onclick="openLightbox(this.src)">
+                <span class="tooltiptext">Click to view larger</span>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if heatmap %}
+        <div class="visualization-card">
+            <h2>Incidents by Hour (Line Graph)</h2>
+            <div class="tooltip">
+                <img src="/static/{{ heatmap }}" alt="Line Graph" onclick="openLightbox(this.src)">
+                <span class="tooltiptext">Click to view larger</span>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        © 2024 Incident Analysis
+    </footer>
+
+    <div id="lightbox" style="display:none;">
+        <img id="lightbox-img" src="" alt="Visualization">
+        <button onclick="closeLightbox()">Close</button>
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

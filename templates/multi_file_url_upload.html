@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDF Files and/or Enter URLs</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>Upload PDF Files and/or Enter URLs</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="files"><i class="fas fa-file-upload"></i> Select PDF files:</label>
+        <input type="file" name="files" id="files" multiple>
+
+        <label for="urls"><i class="fas fa-link"></i> Enter URLs (one per line):</label>
+        <textarea name="urls" id="urls" rows="5" placeholder="Enter URLs here"></textarea>
+
+        <button type="submit"><i class="fas fa-paper-plane"></i> Submit</button>
+    </form>
+</body>
+</html>
