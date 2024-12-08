@@ -112,6 +112,11 @@ Once the setup is complete, you can run the Flask application to start the web i
 3.Open your web browser and navigate to the address displayed in the terminal: http://127.0.0.1:5000
 
 
+
+https://github.com/user-attachments/assets/d2cd9ee5-32ee-4df2-a95c-405b7942a1d5
+
+
+For High video clarity Refer below:
 ## video Demonstration Link:  https://youtu.be/_8mX_zo_wdo
 
 
